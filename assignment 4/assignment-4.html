@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 4: JavaScript|Prime Numbers Finder</title>
+  </head>
+  <body>
+    <h2>Prime Numbers from 1 to 100:</h2>
+    <ul id="primeList"></ul>
+
+    <script>
+      function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function findPrimes() {
+        const primeList = document.getElementById("primeList");
+        for (let i = 1; i <= 100; i++) {
+          if (isPrime(i)) {
+            const listItem = document.createElement("li");
+            listItem.textContent = i;
+            primeList.appendChild(listItem);
+          }
+        }
+      }
+
+      // Call the function to find and display prime numbers
+      findPrimes();
+    </script>
+  </body>
+</html>

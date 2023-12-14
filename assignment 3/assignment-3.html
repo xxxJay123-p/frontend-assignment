@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3: JavaScript</title>
+  </head>
+  <body>
+    <h2>Question 1:</h2>
+    <script>
+      var x1 = 3;
+      var y1 = 20;
+
+      x1 += y1;
+      document.write("x += y: " + x1 + "<br>");
+
+      x1 *= y1;
+      document.write("x *= y: " + x1 + "<br>");
+
+      y1 *= x1;
+      document.write("y *= x: " + y1 + "<br>");
+
+      x1 %= y1;
+      document.write("x %= y: " + x1 + "<br>");
+
+      x1 -= y1 - 10;
+      document.write("x -= y - 10: " + x1 + "<br>");
+      document.write("<hr>");
+    </script>
+
+    <h2>Question 2:</h2>
+    <script>
+      var x2 = 30;
+      var y2 = "banana";
+      var z2 = "40";
+
+      document.write(
+        "typeof(x) == 'number': " + (typeof x2 == "number") + "<br>"
+      );
+      document.write("x === '30': " + (x2 === "30") + "<br>");
+      document.write("x != 30: " + (x2 != 30) + "<br>");
+      document.write("x !== '30': " + (x2 !== "30") + "<br>");
+      document.write("y === 'bana' + 'na': " + (y2 === "bana" + "na") + "<br>");
+      document.write(
+        "x + y !== '30banana': " + (x2 + y2 !== "30banana") + "<br>"
+      );
+      document.write(
+        "typeof(z) == 'string': " + (typeof z2 == "string") + "<br>"
+      );
+      document.write("x <= z: " + (x2 <= z2) + "<br>");
+      document.write("y > z: " + (y2 > z2) + "<br>");
+      document.write("<hr>");
+    </script>
+
+    <h2>Question 3:</h2>
+    <script>
+      function orderWords(words) {
+        // Split the words into an array
+        const wordList = words.split(", ");
+        // Sort the array alphabetically
+        wordList.sort();
+        // Join the sorted words back into a string
+        return wordList.join(", ");
+      }
+
+      // Group the words and call the `orderWords` function
+      const groupA = "lovely, dark, love, young, daring";
+      const orderedA = orderWords(groupA);
+
+      const groupB = "dragon, near, needy, kneel, needs";
+      const orderedB = orderWords(groupB);
+
+      const groupC = "random, mother, monster, neither, car";
+      const orderedC = orderWords(groupC);
+
+      // Display the ordered words
+      document.write(`a. ${orderedA}<br>`);
+      document.write(`b. ${orderedB}<br>`);
+      document.write(`c. ${orderedC}<br>`);
+      document.write("<hr>");
+    </script>
+
+    <h2>Question 4:</h2>
+    <script>
+      var x4 = 10;
+      var y4 = 20;
+      var z4 = 50;
+
+      document.write("x <= y && z > y: " + (x4 <= y4 && z4 > y4) + "<br>");
+      document.write("x == y || x < z: " + (x4 == y4 || x4 < z4) + "<br>");
+      document.write("!x <= z: " + (!x4 <= z4) + "<br>");
+      document.write(
+        "x < y && y < z && x > z: " + (x4 < y4 && y4 < z4 && x4 > z4) + "<br>"
+      );
+      document.write(
+        "x < y && y < z || x > z: " + ((x4 < y4 && y4 < z4) || x4 > z4) + "<br>"
+      );
+      document.write(
+        "x < y && (y < z || x > z): " +
+          (x4 < y4 && (y4 < z4 || x4 > z4)) +
+          "<br>"
+      );
+      document.write(
+        "(x > z || z < y) || (x < y && z > y): " +
+          (x4 > z4 || z4 < y4 || (x4 < y4 && z4 > y4)) +
+          "<br>"
+      );
+      document.write("<hr>");
+    </script>
+    <h3>Table for <code>x && y</code>:</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>x</th>
+          <th>y</th>
+          <th>x && y</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>false</td>
+          <td>false</td>
+          <td id="result1"></td>
+        </tr>
+        <tr>
+          <td>false</td>
+          <td>true</td>
+          <td id="result2"></td>
+        </tr>
+        <tr>
+          <td>true</td>
+          <td>true</td>
+          <td id="result3"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Table for <code>x || y</code>:</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>x</th>
+          <th>y</th>
+          <th>x || y</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>true</td>
+          <td>false</td>
+          <td id="result4"></td>
+        </tr>
+        <tr>
+          <td>false</td>
+          <td>false</td>
+          <td id="result5"></td>
+        </tr>
+        <tr>
+          <td>true</td>
+          <td>true</td>
+          <td id="result6"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Table for <code>!x && x</code>:</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>x</th>
+          <th>!x</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>true</td>
+          <td id="result7"></td>
+        </tr>
+        <tr>
+          <td>false</td>
+          <td id="result8"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // Table 1
+      document.getElementById("result1").innerText = (
+        false && false
+      ).toString();
+      document.getElementById("result2").innerText = (false && true).toString();
+      document.getElementById("result3").innerText = (true && true).toString();
+
+      // Table 2
+      document.getElementById("result4").innerText = (true || false).toString();
+      document.getElementById("result5").innerText = (
+        false || false
+      ).toString();
+      document.getElementById("result6").innerText = (true || true).toString();
+
+      // Table 3
+      document.getElementById("result7").innerText = (!true).toString();
+      document.getElementById("result8").innerText = (!false).toString();
+    </script>
+  </body>
+</html>
